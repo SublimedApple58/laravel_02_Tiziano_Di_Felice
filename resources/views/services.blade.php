@@ -34,32 +34,15 @@
             <h1 class="text-center">I servizi che offriamo</h1>
             <div class="container my-5">
                 <div class="row">
+                    @foreach ($items as $item)
                     <div class="carta col-12 col-md-3">
-                        <h3>Servizio 1</h3>
+                        <h3>{{$item["nome"]}}</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro rem necessitatibus reiciendis incidunt minima at iusto corrupti sunt amet soluta.
+                            {{$item["paragrafo"]}}
                         </p>
-                        <div class="img i1"></div>
+                        <img src={{$item["img"]}} alt="immagine non visualizzabile">
                     </div>
-                    <div class="carta col-12 col-md-3">
-                        <h3>Servizio 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro rem necessitatibus reiciendis incidunt minima at iusto corrupti sunt amet soluta.
-                        </p>
-                        <div class="img i1"></div>
-                    </div><div class="carta col-12 col-md-3">
-                        <h3>Servizio 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro rem necessitatibus reiciendis incidunt minima at iusto corrupti sunt amet soluta.
-                        </p>
-                        <div class="img i1"></div>
-                    </div><div class="carta col-12 col-md-3">
-                        <h3>Servizio 1</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro rem necessitatibus reiciendis incidunt minima at iusto corrupti sunt amet soluta.
-                        </p>
-                        <div class="img i1"></div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </main>
