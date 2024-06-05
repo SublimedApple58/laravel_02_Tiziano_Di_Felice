@@ -6,7 +6,7 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- link css -->
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="/style/style.css">
   </head>
   <body>
         <!-- navbar -->
@@ -33,13 +33,14 @@
         <main class="my-5 py-5">
             <h1 class="text-center">I servizi che offriamo</h1>
             <div class="container my-5">
-                <div class="row">
+                <div class="row justify-content-center">
                     @foreach ($items as $item)
-                    <div class="carta col-12 col-md-3">
-                        <h3>{{$item["nome"]}}</h3>
+                    <div class="carta col-12 col-md-4 py-3 my-5">
+                        <h3 class="text-center">{{$item["nome"]}}</h3>
                         <p>
                             {{$item["paragrafo"]}}
                         </p>
+                        <a href="{{route('service.detail', ['id' => $item["id"]])}}">Dettagli servizio</a>
                         <img src={{$item["img"]}} alt="immagine non visualizzabile">
                     </div>
                     @endforeach
